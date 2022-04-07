@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link href="{% static 'index.css' %}" type="text/css" rel="stylesheet">
+    <title>UI Madness</title>
+</head>
+
+<body>
+
+
+    <div class="TopPanel" id="TopPanel">
+        <div class="WebPageName">
+            <b>UI</b>
+            <i><em>M</em></i><sub><strong>a</strong></sub><small>d</small><b><ins>n</ins></b><sup>e</sup><del>s</del><strong>s</strong>
+        </div>
+        <div class="TopPanelTop">
+            <a class="MenuButton" id="MenuButton">menu</a>
+            <a href="{% url 'home-page' %}">home</a>
+            <a href="{% url 'start-page' %}">start</a>
+            <a href="{% url 'about-page' %}">about</a>
+            <a href="{% url 'login-page' %}">login</a>
+        </div>
+
+        <div class="TopPanelBottom">
+            <a href="https://www.reddit.com/r/badUIbattles/" target=_blank title="The thing that inspired this web site"><b>Inspired by</b></a>
+        </div>
+
+    </div>
+
+    <div id="SidePanel" class="SidePanel">
+        <a href="javascript:void(0)" class="closebtn" id="closebtn">&times;</a>
+        <a href="#" onmousedown="play('{% static 'media/sounds/zzxxzxzx.mp3'%}')">aaaa</a>
+        <a href="#" onmousedown="play('{% static 'media/sounds/rip-ears.mp3'%}')">aaaa!</a>
+        <a href="#" onmousedown="play('{% static 'media/sounds/r2d2_scream_converted.mp3'%}')">aaaa?</a>
+        <a href="#" onmousedown="play('{% static 'media/sounds/tom-aaaaaaaa.mp3'%}')">a</a>
+    </div>
+
+    <div class="ScrollPanel" id="ScrollPanel">
+       {% block content %}{% endblock %}
+    </div>
+
+
+    <script src="{% static 'index.js' %}"></script>
+
+
+
+</body>
+
+</html>

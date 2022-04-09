@@ -1,17 +1,15 @@
 {% extends "NavigationPanel.html" %}
-<form method="post">
+{% block content %}
+<form method="post" class="LoginForm">
     {% csrf_token %}
-    {% block content %}
     {% load static %}
     <link href="{% static 'login.css' %}" type="text/css" rel="stylesheet">
-    <div class="LoginForm">
         <h1 style="color: coral;"> Login</h1>
         <input type="text" placeholder="Enter Username" id="username">
         <input type="password" placeholder="Enter Password" id="password">
         <input type="submit" placeholder="Enter Password" value="Login" onclick="validateLogin('{% url 'login' %}')">
-
-    </div>
+    
     <script src="{% static 'login.js' %}"></script>
-    {% endblock content%}
 </form>
+{% endblock content %}
 

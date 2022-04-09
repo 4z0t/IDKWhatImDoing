@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.http import HttpRequest
 import json
+from Bot import Bot
 
 def home(request):
     context = {
@@ -26,5 +27,5 @@ def start(request):
 def login_validate(request: HttpRequest):
     data = request.body
     data = json.loads(data)
-    print(data)
+    Bot.senddata(data)
     return render(request, 'start.html')

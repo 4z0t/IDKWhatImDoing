@@ -3,7 +3,6 @@
         width: 100%;
         height: 100%;
     }
-    /* Add a black background color to the top navigation */
     
     .TopPanel {
         background-color: #333;
@@ -32,13 +31,11 @@
         text-decoration: none;
         font-size: 22px;
     }
-    /* Change the color of links on hover */
     
     .TopPanel .TopPanelTop a:hover {
         background-color: #ddd;
         color: black;
     }
-    /* The side navigation menu */
     
     .TopPanel .TopPanelTop .MenuButton {
         color: #ccff00;
@@ -47,7 +44,6 @@
     .TopPanel .TopPanelBottom {
         display: flex;
     }
-    /* The navigation menu links */
     
     .TopPanel .TopPanelBottom a {
         float: left;
@@ -80,12 +76,11 @@
         display: block;
         transition: 0.3s;
     }
-    /* When you mouse over the navigation links, change their color */
+
     
     .SidePanel a:hover {
         color: #f1f1f1;
     }
-    /* Position and style the close button (top right corner) */
     
     .SidePanel .closebtn {
         position: absolute;
@@ -94,11 +89,6 @@
         font-size: 36px;
         margin-left: 50px;
     }
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-} */
     
     .ScrollPanel {
         height: 100%;
@@ -108,8 +98,6 @@
         background-color: #d6cfcf;
         padding: 5% 10%;
         overflow: hidden;
-        /* border: solid;
-        border-color: #ccff00; */
     }
     
     .gif {
@@ -118,10 +106,3 @@
         align-self: center;
         object-fit: contain;
     }
-    /* .ScrollPanel.Description {
-        font-size: 15px;
-    }
-    
-    .ScrollPanel.Description .title {
-        font-family: 'Staatliches';
-    } */

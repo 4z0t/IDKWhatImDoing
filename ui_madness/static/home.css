@@ -1,0 +1,12 @@
+ .ScrollPanel .Upvote a{
+  color: red;
+  font-size: 30px;
+   transition: 0.3s;
+   cursor: default;
+   -webkit-user-select: none;
+}
+
+ .ScrollPanel .Upvote a:hover {
+  color: yellow;
+   font-size: 40px;
+}

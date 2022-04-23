@@ -1,4 +1,16 @@
 {% extends "NavigationPanel.html" %}
 {% block content %}
-    {{ current_time }}
+ {% load static %}
+ <link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
+    {% for article in articles %}
+  <div>
+    {{ article.type }}
+    {{ article.data.text}}
+    {{ article.data.id }}
+    <div class="Upvote">
+        <a>♥</a>
+    </div>    
+  </div>
+
+  {% endfor %}  
 {% endblock content%}

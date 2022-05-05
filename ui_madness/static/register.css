@@ -54,6 +54,7 @@
         display: block;
         background: none;
         cursor: pointer;
+        text-align: center;
     }
     
     .ScrollPanel .LoginForm input[type="submit"]:hover {

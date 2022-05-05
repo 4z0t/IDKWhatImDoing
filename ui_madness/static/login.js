@@ -4,28 +4,28 @@ var default_text_color = null
 
 
 function validateLogin(url) {
-    if (validatePassWord(password.value) && validateUserName(username.value)) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", url);
-        xhr.setRequestHeader('X-CSRFToken', csrftoken)
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                console.log(xhr.status);
-                //console.log(xhr.responseText);
-                document.body.innerHTML = xhr.responseText
-            }
-        };
-
-        let data = JSON.stringify({
-            'username': username.value,
-            'passwrd': password.value
-        });
-
-        xhr.send(data);
-    }
+//    if (validatePassWord(password.value) && validateUserName(username.value)) {
+//        let xhr = new XMLHttpRequest();
+//        xhr.open("POST", url);
+//        xhr.setRequestHeader('X-CSRFToken', csrftoken)
+//        xhr.setRequestHeader("Accept", "application/json");
+//        xhr.setRequestHeader("Content-Type", "application/json");
+//
+//        xhr.onreadystatechange = function() {
+//            if (xhr.readyState === 4) {
+//                console.log(xhr.status);
+//                //console.log(xhr.responseText);
+//                document.body.innerHTML = xhr.responseText
+//            }
+//        };
+//
+//        let data = JSON.stringify({
+//            'username': username.value,
+//            'passwrd': password.value
+//        });
+//
+//        xhr.send(data);
+//    }
 }
 
 function validateUserName(name) {

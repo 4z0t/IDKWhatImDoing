@@ -1,12 +1,27 @@
- .ScrollPanel .Upvote a{
-  color: red;
-  font-size: 30px;
-   transition: 0.3s;
-   cursor: default;
-   -webkit-user-select: none;
-}
-
+ .ScrollPanel .Upvote a {
+     color: red;
+     font-size: 30px;
+     transition: 0.3s;
+     cursor: default;
+     -webkit-user-select: none;
+ }
+ 
  .ScrollPanel .Upvote a:hover {
-  color: yellow;
-   font-size: 40px;
-}
+     color: yellow;
+     font-size: 40px;
+ }
+ 
+ .ScrollPanel .Comment {
+     height: fit-content;
+     display: block;
+     border-radius: 5px;
+     background-color: rgb(41, 38, 46);
+     border: 3px solid blueviolet;
+     margin: 10px;
+     padding: 10px;
+     width: max-content;
+ }
+ 
+ .ScrollPanel .Comment p {
+     color: aliceblue;
+ }

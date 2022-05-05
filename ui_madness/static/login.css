@@ -3,7 +3,7 @@
         background-color: rgb(41, 38, 46);
         padding: 10% 5%;
         width: 100%;
-        height: 500px;
+        height: fit-content;
         text-align: center;
         /* display: block;
         margin-right: auto;
@@ -58,4 +58,16 @@
     
     .ScrollPanel .LoginForm input[type="submit"]:hover {
         border-color: #47fc00;
+    }
+    
+    .LoginForm label {
+        color: aquamarine;
+    }
+    
+    .LoginForm li {
+        text-align: left;
+    }
+    
+    .ScrollPanel .SignIn a {
+        color: aqua;
     }

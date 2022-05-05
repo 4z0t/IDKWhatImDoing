@@ -1,16 +1,16 @@
 {% extends "NavigationPanel.html" %}
 {% block content %}
- {% load static %}
- <link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
-    {% for article in articles %}
-  <div>
-    {{ article.type }}
-    {{ article.data.text}}
-    {{ article.data.id }}
+{% load static %}
+<link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
+{% for comment in comments %}
+<div class = "Comment">
+    <p>{{ comment.author }}</p>
+    <p>{{ comment.date_commented|date:"d F Y" }}</p>
+    <p>{{ comment.content }}</p>
     <div class="Upvote">
         <a>♥</a>
-    </div>    
-  </div>
+    </div>
+</div>
 
-  {% endfor %}  
+{% endfor %}
 {% endblock content%}

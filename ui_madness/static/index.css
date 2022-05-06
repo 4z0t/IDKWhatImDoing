@@ -13,7 +13,7 @@
         vertical-align: middle;
         float: right;
         font-size: 22px;
-        padding: 20px;
+        padding: 20px 10px 0px 10px;
         color: #ddd;
     }
     
@@ -42,7 +42,7 @@
     }
     
     .TopPanel .TopPanelBottom {
-        display: flex;
+        display: block;
     }
     
     .TopPanel .TopPanelBottom a {
@@ -53,6 +53,36 @@
         text-decoration: none;
         font-size: 14px;
         color: coral;
+    }
+    
+    .TopPanel .LogoutButton {
+        vertical-align: middle;
+        float: right;
+        display: flex;
+        width: fit-content;
+        padding: 5px 15px;
+        color: #ddd;
+    }
+    
+    .TopPanel .LogoutButton a {
+        font-family: 'Staatliches';
+        font-size: 18px;
+        display: block;
+        float: right;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    .ScrollPanel .Content {
+        color: rgb(248, 248, 248);
+        background-color: rgb(41, 38, 46);
+        padding: 10% 5%;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        /* display: block;
+        margin-right: auto;
+        margin-left: auto; */
     }
     
     .SidePanel {
@@ -92,7 +122,7 @@
     .ScrollPanel {
         height: 100%;
         display: flex;
-        width: 60%;
+        width: 80%;
         margin: auto;
         background-color: #d6cfcf;
         padding: 5% 10%;

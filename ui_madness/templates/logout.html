@@ -1,0 +1,12 @@
+{% extends "NavigationPanel.html" %}
+{% block content %}
+<div class="Content">
+    <h1 style="color: coral">You have been logged out</h1>
+    <div class="SignIn">
+        <p class="text-muted">
+            <a>Come back soon!</a>
+            <a class="ml-2" href="{% url 'login-page' %}">Log in again</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

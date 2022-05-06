@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .models import UpVote, Comment
 from django.contrib.auth.forms import UserCreationForm
-
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -24,12 +23,10 @@ def register(request: HttpRequest):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}')
-            print('user registered')
-            return redirect('home-page')
+            messages.success(request, f'Account created for {username}. Now you can log in!')
+            return redirect('login-page')
         else:
             messages.warning(request, 'Invalid password!')
-            print('invalid')
     else:
         form = UserCreationForm()
 
@@ -42,3 +39,8 @@ def login(request: HttpRequest):
 
 def start(request):
     return render(request, 'start.html')
+
+
+@login_required
+def profile(request: HttpRequest):
+    return render(request, 'profile.html')

@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link href="{% static 'index.css' %}" type="text/css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>UI Madness</title>
 </head>
 
@@ -27,14 +28,23 @@
         <a href="{% url 'home-page' %}">home</a>
         <a href="{% url 'start-page' %}">start</a>
         <a href="{% url 'about-page' %}">about</a>
+        {% if not user.is_authenticated %}
         <a href="{% url 'login-page' %}">login</a>
+        <a href="{% url 'register-page' %}">register</a>
+        {% endif %}
+
     </div>
+
 
     <div class="TopPanelBottom">
         <a href="https://www.reddit.com/r/badUIbattles/" target=_blank title="The thing that inspired this web site"><b>Inspired
             by</b></a>
     </div>
-
+    {% if user.is_authenticated %}
+    <div class="LogoutButton">
+        <a href="{% url 'logout-page' %}">logout</a>
+    </div>
+    {% endif %}
 </div>
 
 <div id="SidePanel" class="SidePanel">
@@ -43,19 +53,23 @@
     <a href="#" onmousedown="play('{% static 'media/sounds/rip-ears.mp3'%}')">aaaa!</a>
     <a href="#" onmousedown="play('{% static 'media/sounds/r2d2_scream_converted.mp3'%}')">aaaa?</a>
     <a href="#" onmousedown="play('{% static 'media/sounds/tom-aaaaaaaa.mp3'%}')">a</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'profile-page' %}">Profile</a>
+    {% endif %}
 </div>
 
 <div class="ScrollPanel" id="ScrollPanel">
-    {% if messages %}
-    {% for message in messages %}
+    {% if messages %} {% for message in messages %}
     <div class="alert alert-{{ message.tags }}" role="alert">
         {{message}}
     </div>
     {% endfor %}
     {% endif %}
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 </div>
 <script src="{% static 'index.js' %}"></script>
 </body>
+
 </html>

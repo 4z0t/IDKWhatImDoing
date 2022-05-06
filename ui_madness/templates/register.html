@@ -1,18 +1,16 @@
 {% extends "NavigationPanel.html" %}
 {% block content %}
-<div class="Content">
-    <form method="post" class="LoginForm">
-        {% csrf_token %}
-        {% load static %}
-        <link href="{% static 'register.css' %}" type="text/css" rel="stylesheet">
-        <h1 style="color: coral;">Register</h1>
-        {{ form.as_p }}
-        <input type="submit" placeholder="Submit Login" value="Register">
-        <div class="SignIn">
-            <p class="text-muted">
-                Have an account? <a class="ml-2" href="{% url 'login-page' %}">Sign In!</a>
-            </p>
-        </div>
-    </form>
-</div>
+<form method="post" class="LoginForm">
+    {% csrf_token %}
+    {% load static %}
+    <link href="{% static 'register.css' %}" type="text/css" rel="stylesheet">
+    <h1 style="color: coral;">Register</h1>
+    {{ form.as_p }}
+    <input type="submit" placeholder="Submit Login" value="Register">
+    <div class="SignIn">
+        <p class="text-muted">
+            Have an account? <a class="ml-2" href="{% url 'login-page' %}">Sign In!</a>
+        </p>
+    </div>
+</form>
 {% endblock content %}

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,15 @@ X_FRAME_OPTIONS = '*'
 LOGIN_REDIRECT_URL = 'home-page'
 
 LOGIN_URL = 'login-page'
+
+# Конфигурация Channels
+ASGI_APPLICATION = "mysite.urls.application"
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 8000)],
+            # "symmetric_encryption_keys": [SECRET_KEY],
+        },
+    },
+}

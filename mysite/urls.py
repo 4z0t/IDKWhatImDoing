@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from channels.routing import ProtocolTypeRouter, URLRouter
+
+from ui_madness.urls import websockets
+
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('home/', include('ui_madness.urls'), name='home'),
     path('', include('ui_madness.urls'), name='home'),
 ]
+
+application = ProtocolTypeRouter({
+    "websocket": websockets,
+})

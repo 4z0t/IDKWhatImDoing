@@ -6,6 +6,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.fields import GenericRelation
 
 from django.db.models import Sum
+from django.db.models.signals import post_save
 
 
 class UpVoteManager(models.Manager):
@@ -36,10 +37,19 @@ class UpVote(models.Model):
 
 
 class Comment(models.Model):
-    votes = GenericRelation(UpVote, related_query_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     date_commented = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"comment by {self.author}"
+
+
+
+
+def on_comment_saved(sender, instance, **kwargs):
+    print('comment created bruh')
+    print(instance)
+
+
+post_save.connect(on_comment_saved, sender=Comment)

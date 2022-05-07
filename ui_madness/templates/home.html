@@ -2,15 +2,25 @@
 {% block content %}
 {% load static %}
 <link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
-{% for comment in comments %}
-<div class = "Comment">
-    <p>{{ comment.author }}</p>
-    <p>{{ comment.date_commented|date:"d F Y" }}</p>
-    <p>{{ comment.content }}</p>
-    <div class="Upvote">
-        <a>♥</a>
+<div class="CommentSection">
+    {% for comment in comments %}
+    <div class="Comment">
+        <p>{{ comment.author }}</p>
+        <p>{{ comment.date_commented|date:"d F Y" }}</p>
+        <p>{{ comment.content }}</p>
+        <div class="Upvote">
+            <a>♥</a>
+        </div>
     </div>
+    {% endfor %}
 </div>
-
-{% endfor %}
+{% if user.is_authenticated %}
+<form class="CommentAddSection" method="post" action="{% url 'home-page' %}">
+    {% csrf_token %}
+    <p>Add comment<Br>
+        <textarea name="comment" cols="40" rows="3"></textarea></p>
+    <p><input type="submit" value="send">
+        <input type="reset" value="clear"></p>
+</form>
+{% endif %}
 {% endblock content%}

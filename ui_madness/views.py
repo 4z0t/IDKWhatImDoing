@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .models import UpVote, Comment
@@ -6,7 +8,14 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
-def home(request):
+def home(request: HttpRequest):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            content = request.POST.get('comment')
+            Comment.objects.create(author=request.user, content=content)
+            print(f'comment added by {request.user}')
+        else:
+            return redirect('login-page')
     context = {
         "comments": Comment.objects.all()
     }

@@ -1,2 +1,4 @@
 django
 pyTelegramBotAPI
+channels
+channels-redis

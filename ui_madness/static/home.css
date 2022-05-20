@@ -25,5 +25,41 @@
  .ScrollPanel .Comment p {
      color: aliceblue;
  }
-
  
+ .ScrollPanel .CommentAddSection {
+     height: fit-content;
+     display: block;
+     width: 100%;
+     border-radius: 5px;
+     background-color: rgb(41, 38, 46);
+     border: 3px solid blueviolet;
+     margin: 10px;
+     padding: 10px;
+     width: 100%;
+ }
+ 
+ .ScrollPanel .CommentAddSection p {
+     color: coral;
+     font-size: 20px;
+ }
+ 
+ .ScrollPanel .CommentAddSection textarea {
+     width: 100%;
+     color: aliceblue;
+     background-color: rgb(10, 10, 10);
+     font-size: 16px;
+ }
+ 
+ .ScrollPanel .CommentAddSection input {
+     color: aliceblue;
+     background-color: rgb(41, 33, 33);
+     border-radius: 10px;
+     border-color: aqua;
+     transition: 0.3s;
+     width: 60px;
+ }
+ 
+ .ScrollPanel .CommentAddSection input:hover {
+     border-color: chartreuse;
+     width: 70px;
+ }

@@ -12,8 +12,11 @@ def home(request: HttpRequest):
     if request.method == 'POST':
         if request.user.is_authenticated:
             content = request.POST.get('comment')
-            Comment.objects.create(author=request.user, content=content)
-            print(f'comment added by {request.user}')
+            if len(content) == 0:
+                messages.warning(request, 'Empty message!')
+            else:
+                Comment.objects.create(author=request.user, content=content)
+                print(f'comment added by {request.user}')
         else:
             return redirect('login-page')
     context = {

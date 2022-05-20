@@ -1,9 +1,10 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
@@ -24,13 +25,13 @@
         <strong>s</strong>
     </div>
     <div class="TopPanelTop">
-        <a class="MenuButton" id="MenuButton">menu</a>
-        <a href="{% url 'home-page' %}">home</a>
-        <a href="{% url 'start-page' %}">start</a>
-        <a href="{% url 'about-page' %}">about</a>
+        <a class="MenuButton" id="MenuButton">{% trans 'MenuPageName' %}</a>
+        <a href="{% url 'home-page' %}">{% trans 'HomePageName' %}</a>
+        <a href="{% url 'start-page' %}">{% trans 'StartPageName' %}</a>
+        <a href="{% url 'about-page' %}">{% trans 'AboutPageName' %}</a>
         {% if not user.is_authenticated %}
-        <a href="{% url 'login-page' %}">login</a>
-        <a href="{% url 'register-page' %}">register</a>
+        <a href="{% url 'login-page' %}">{% trans 'LoginPageName' %}</a>
+        <a href="{% url 'register-page' %}">{% trans 'RegisterPageName' %}</a>
         {% endif %}
 
     </div>
@@ -42,7 +43,7 @@
     </div>
     {% if user.is_authenticated %}
     <div class="LogoutButton">
-        <a href="{% url 'logout-page' %}">logout</a>
+        <a href="{% url 'logout-page' %}">{% trans 'LogoutPageName' %}</a>
     </div>
     {% endif %}
 </div>
@@ -54,7 +55,7 @@
     <a href="#" onmousedown="play('{% static 'media/sounds/r2d2_scream_converted.mp3'%}')">aaaa?</a>
     <a href="#" onmousedown="play('{% static 'media/sounds/tom-aaaaaaaa.mp3'%}')">a</a>
     {% if user.is_authenticated %}
-    <a href="{% url 'profile-page' %}">Profile</a>
+    <a href="{% url 'profile-page' %}">{% trans 'ProfilePageName' %}</a>
     {% endif %}
 </div>
 
@@ -71,5 +72,4 @@
 </div>
 <script src="{% static 'index.js' %}"></script>
 </body>
-
 </html>

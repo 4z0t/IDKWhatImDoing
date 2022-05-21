@@ -4,7 +4,7 @@
     {% csrf_token %}
     {% load static %}
     <link href="{% static 'register.css' %}" type="text/css" rel="stylesheet">
-    <h1 style="color: coral;">Login</h1>
+    <h1 style="color: coral;">{% trans 'LoginText' %}</h1>
     {{ form.as_p }}
     <input type="submit" placeholder="Submit Login" value="Login">
     <div class="SignIn">

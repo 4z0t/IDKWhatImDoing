@@ -1,12 +1,14 @@
 {% extends "NavigationPanel.html" %}
 {% block content %}
+{% load i18n %}
+{% load l10n %}
 {% load static %}
 <link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
 <div class="CommentSection">
     {% for comment in comments %}
     <div class="Comment">
         <p>{{ comment.author }}</p>
-        <p>{{ comment.date_commented|date:"d F Y" }}</p>
+        <p>{{ comment.date_commented|date:"SHORT_DATE_FORMAT" }}</p>
         <p>{{ comment.content }}</p>
         <div class="Upvote">
             <a>♥</a>
@@ -17,10 +19,24 @@
 {% if user.is_authenticated %}
 <form class="CommentAddSection" method="post" action="{% url 'home-page' %}">
     {% csrf_token %}
-    <p>Add comment<Br>
-        <textarea name="comment" cols="40" rows="3"></textarea></p>
-    <p><input type="submit" value="send" style="float: left">
-        <input type="reset" value="clear" style="float: right"></p>
+    <p>{% trans 'AddComment' %}<Br>
+        <textarea name="comment" cols="40" rows="3" id="commentArea"></textarea></p>
+    <p><input type="submit" value="{% trans 'SendButton' %}" id="commentSubmit" style="float: left">
+        <input type="reset" value="{% trans 'ClearButton' %}" id="commentClear" style="float: right"></p>
+    <script>
+    commentArea.value = localStorage.getItem('commentArea');
+    commentArea.oninput = () => {
+        localStorage.setItem('commentArea', commentArea.value)
+    };
+    commentSubmit.onclick = ()=>
+    {
+        localStorage.setItem('commentArea', "")
+    };
+    commentClear.onclick = ()=>
+    {
+        localStorage.setItem('commentArea', "")
+    };
+</script>
 </form>
 {% endif %}
 {% endblock content%}

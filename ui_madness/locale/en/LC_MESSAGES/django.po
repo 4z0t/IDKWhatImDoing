@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-21 00:20+0300\n"
+"POT-Creation-Date: 2022-05-21 09:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\NavigationPanel.html:28
+#: .\templates\NavigationPanel.html:29
 msgid "MenuPageName"
 msgstr "Menu"
 
-#: .\templates\NavigationPanel.html:29
+#: .\templates\NavigationPanel.html:30
 msgid "HomePageName"
 msgstr "Home"
 
-#: .\templates\NavigationPanel.html:30
+#: .\templates\NavigationPanel.html:31
 msgid "StartPageName"
 msgstr "Start"
 
-#: .\templates\NavigationPanel.html:31
+#: .\templates\NavigationPanel.html:32
 msgid "AboutPageName"
 msgstr "About"
 
-#: .\templates\NavigationPanel.html:33
+#: .\templates\NavigationPanel.html:34
 msgid "LoginPageName"
 msgstr "Login"
 
-#: .\templates\NavigationPanel.html:34
+#: .\templates\NavigationPanel.html:35
 msgid "RegisterPageName"
 msgstr "Register"
 
-#: .\templates\NavigationPanel.html:46
+#: .\templates\NavigationPanel.html:47
 msgid "LogoutPageName"
 msgstr "Logout"
 
-#: .\templates\NavigationPanel.html:58
+#: .\templates\NavigationPanel.html:59
 msgid "ProfilePageName"
 msgstr "Profile"
+
+#: .\templates\home.html:20
+msgid "AddComment"
+msgstr "Add comment"
+
+#: .\templates\home.html:22
+msgid "SendButton"
+msgstr "send"
+
+#: .\templates\home.html:23
+msgid "ClearButton"
+msgstr "clear"
+
+#: .\templates\login.html:7
+msgid "LoginText"
+msgstr "Login"

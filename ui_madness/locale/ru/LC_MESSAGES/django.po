@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-21 00:19+0300\n"
+"POT-Creation-Date: 2022-05-21 09:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,34 +20,50 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\templates\NavigationPanel.html:28
+#: .\templates\NavigationPanel.html:29
 msgid "MenuPageName"
 msgstr "Меню"
 
-#: .\templates\NavigationPanel.html:29
+#: .\templates\NavigationPanel.html:30
 msgid "HomePageName"
 msgstr "Главная"
 
-#: .\templates\NavigationPanel.html:30
+#: .\templates\NavigationPanel.html:31
 msgid "StartPageName"
 msgstr "Начать"
 
-#: .\templates\NavigationPanel.html:31
+#: .\templates\NavigationPanel.html:32
 msgid "AboutPageName"
 msgstr "О сайте"
 
-#: .\templates\NavigationPanel.html:33
+#: .\templates\NavigationPanel.html:34
 msgid "LoginPageName"
 msgstr "Войти"
 
-#: .\templates\NavigationPanel.html:34
+#: .\templates\NavigationPanel.html:35
 msgid "RegisterPageName"
 msgstr "Регистрация"
 
-#: .\templates\NavigationPanel.html:46
+#: .\templates\NavigationPanel.html:47
 msgid "LogoutPageName"
 msgstr "Выйти"
 
-#: .\templates\NavigationPanel.html:58
+#: .\templates\NavigationPanel.html:59
 msgid "ProfilePageName"
 msgstr "Профиль"
+
+#: .\templates\home.html:20
+msgid "AddComment"
+msgstr "Добавить комментарий"
+
+#: .\templates\home.html:22
+msgid "SendButton"
+msgstr "Отправить"
+
+#: .\templates\home.html:23
+msgid "ClearButton"
+msgstr "Очистить"
+
+#: .\templates\login.html:7
+msgid "LoginText"
+msgstr "Вход"

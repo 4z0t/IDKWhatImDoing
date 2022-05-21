@@ -56,10 +56,10 @@
      border-radius: 10px;
      border-color: aqua;
      transition: 0.3s;
-     width: 60px;
+     width: auto;
  }
  
  .ScrollPanel .CommentAddSection input:hover {
      border-color: chartreuse;
-     width: 70px;
+     width: calc(auto + 10px);
  }

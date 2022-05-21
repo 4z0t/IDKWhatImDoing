@@ -1,0 +1,10 @@
+{% for comment in comments %}
+    <div class="Comment">
+        <p>{{ comment.author }}</p>
+        <p>{{ comment.date_commented|date:"SHORT_DATE_FORMAT" }}</p>
+        <p>{{ comment.content }}</p>
+        <div class="Upvote">
+            <a>♥</a>
+        </div>
+    </div>
+{% endfor %}

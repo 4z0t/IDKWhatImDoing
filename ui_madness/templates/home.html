@@ -4,7 +4,7 @@
 {% load l10n %}
 {% load static %}
 <link href="{% static 'home.css' %}" type="text/css" rel="stylesheet">
-<div class="CommentSection">
+<div class="CommentSection" id="CommentSection"> 
     {% for comment in comments %}
     <div class="Comment">
         <p>{{ comment.author }}</p>
@@ -37,6 +37,10 @@
         localStorage.setItem('commentArea', "")
     };
 </script>
+<script>
+  var url = {% url 'comment-update' %};
+</script>
+  <script src="{% static 'home.js' %}"></script>
 </form>
 {% endif %}
 {% endblock content%}

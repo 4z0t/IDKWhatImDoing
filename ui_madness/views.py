@@ -56,3 +56,10 @@ def start(request):
 @login_required
 def profile(request: HttpRequest):
     return render(request, 'profile.html')
+
+def comment_update(request):
+    return render(request, 'comments.html',{
+        "comments": Comment.objects.all()
+    })
+    
+  
